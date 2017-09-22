@@ -1,7 +1,10 @@
 # Ping Pong
 Joseph Tomlinson
 
-Will give you some numbers and some of them ping pong or something. Whatever.
+## Description
+Will give you some numbers and some of them ping pong.
+
+live preview: https://bizzclaw.github.io/epicodus-pingpong/
 
 ## Installation
 Download as zip, or clone to your machine.
@@ -28,6 +31,7 @@ Enter a number in to the text field probably.
 | Numbers divisible by 15 are replaced with "ping-pong"                   | 15            | 1,2,ping, 4, pong, 5,ping,8,ping, pong, 11,  ping, 13, 14, "ping-pong" |
 
 
-Uses bootstrap and jQuery.
+##legal
+Uses bootstrap, anime and jQuery.
 
 Copyright (c) 2017 Joseph Tomlinson All Rights Reserved.

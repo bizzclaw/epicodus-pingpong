@@ -44,5 +44,12 @@ body {
 }
 
 .btn {
+	margin: 10px;
 	background-color: rgb(70, 70, 70);
+}
+
+#info {
+	border-style: solid;
+	border-color: var(--col_text);
+	opacity: 0;
 }

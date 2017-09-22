@@ -60,7 +60,7 @@ $(document).ready(function() {
 	});
 
 	anime({
-		targets: "#user-input",
+		targets: "#user-input, #info",
 		translateY: 20,
 		opacity: 1,
 	});
@@ -69,11 +69,11 @@ $(document).ready(function() {
 		var input = parseInt($("input").val());
 		var error;
 		if (input > 100) {
-			error = "Ammount too high, clamped to 100.";
+			error = "Amount too high, clamped to 100.";
 			input = 100;
 		} else if (input < 1) {
 			input = 1;
-			error = "Ammount to low, forced to 1."
+			error = "Amount to low, forced to 1."
 		}
 		flyNumbers(input, error);
 	});

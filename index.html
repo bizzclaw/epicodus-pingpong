@@ -14,15 +14,26 @@
 	<body>
 		<div class="container">
 			<h1 id="main-header">Ping Pong!</h1>
-			<form>
-				<div id="user-input">
-					<div class="form-group">
-						<input class="form-control" id="user-input" type="number" placeholder="enter a number:">
+			<div class="row">
+				<div class="col col-md-2" id="info">
+					<h2>About</h2>
+					<p>Created By:</p>
+					<p>Joseph Tomlinson</p>
+					<p>___________________</p>
+					<p><a href="https://github.com/bizzclaw">Github Account</a></p>
+				</div>
+				<div class="col col-md-10">
+					<form>
+						<div id="user-input">
+							<div class="form-group">
+								<input class="form-control" id="user-input" type="number" placeholder="enter a number:">
+							</div>
+							<button class="btn"type="submit">Ping Pong</button>
+						</div>
+					</form>
+					<div id="output">
 					</div>
-					<button class="btn"type="submit">Ping Pong</button>
-				</form>
-			</div>
-			<div id="output">
+				</div>
 			</div>
 		</div>
 	</body>

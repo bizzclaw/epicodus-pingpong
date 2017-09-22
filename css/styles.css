@@ -1,0 +1,22 @@
+body {
+	color: rgb(0, 130, 255);
+	background-color: rgb(15,8,18);
+}
+
+.form-control placeholder {
+	background: rgb(10,8,10);
+}
+
+.form-control {
+	color: rgb(0, 130, 255);
+	background: rgb(10,10,10);
+	border-color: rgb(0, 130, 255);
+}
+
+#user-input {
+	opacity: 0;
+}
+
+#main-header {
+	opacity: 0;
+}

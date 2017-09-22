@@ -8,7 +8,7 @@ var getPong = function(number) {
 			return pongs[pingid];
 		}
 	}
-	return number
+	return number;
 }
 // *********  ANIME  ********* //
 
@@ -26,24 +26,24 @@ var flyOutput = function(output, i) {
 		},
 	}
 	if (typeof output === "string") {
-		animedata.rotate = "2turn"
-		animedata.color = "#FF8D33"
+		animedata.rotate = "2turn";
+		animedata.color = "#FF8D33";
 	}
 	anime(animedata);
 }
 
 var flyNumbers = function(amt, error) {
 	var fadetime = 300;
-	$(".flynumber").fadeOut(fadetime)
+	$(".flynumber").fadeOut(fadetime);
 	setTimeout(function(){
-		$(".flynumber").remove()
+		$(".flynumber").remove();
 		anime({
 			targets: "#output",
 			opacity: 1,
 			translateY: 50
 		})
 		if (error) {
-			flyOutput(error,0)
+			flyOutput(error,0);
 		}
 		for (i = 1; i <= amt; i++) {
 			flyOutput(getPong(i), i);
@@ -75,6 +75,6 @@ $(document).ready(function() {
 			input = 1;
 			error = "Ammount to low, forced to 1."
 		}
-		flyNumbers(input, error)
+		flyNumbers(input, error);
 	});
 });

@@ -1,6 +1,10 @@
+:root {
+	--col_text: rgb(130, 180, 255)
+}
+
 body {
-	color: rgb(0, 130, 255);
-	background-color: rgb(15,8,18);
+	color: var(--col_text);
+	background-color: rgb(20,20,20);
 }
 
 .form-control placeholder {
@@ -8,9 +12,9 @@ body {
 }
 
 .form-control {
-	color: rgb(0, 130, 255);
-	background: rgb(10,10,10);
-	border-color: rgb(0, 130, 255);
+	color: var(--col_text);
+	background: rgb(50,50,50);
+	border-color: var(--col_text);
 }
 
 #user-input {
@@ -19,4 +23,17 @@ body {
 
 #main-header {
 	opacity: 0;
+	text-align: center;
+	margin: 50px;
+}
+
+#output {
+	opacity: 0;
+}
+
+.flynumber {
+	opacity: 0;
+	text-align: center;
+	width: 50%;
+	height: auto;
 }

@@ -19,44 +19,66 @@ var pingPongNumbers = function(number) {
 	return numbers;
 }
 
+// *********ANIME********* //
+
+var DisplayInput = function(on) {
+	if (on) {
+		anime({
+			targets: "#main-header",
+			opacity: 1,
+			scale: 1.3,
+			// rotate: "2turn"
+		});
+
+		anime({
+			targets: "#user-input",
+			translateY: 20,
+			opacity: 1,
+		});
+	} else {
+		anime({
+			targets: "#user-input",
+			translateY: -10,
+			opacity: 0,
+		});
+		anime({
+			targets: "#main-header",
+			opacity: 0,
+			scale: 0
+		});
+	}
+}
+
+function flyNumbers(amt) {
+	$(".flynumber").remove()
+	anime({
+		targets: "#output",
+		opacity: 1,
+		translateY: 50
+	})
+	for (i = 1; i <= amt; i++) {
+		var id = "number-"+i
+		var ponged = getPong(i)
+		$("#output").append(`<div class="flynumber" id="`+ id +`">`+ ponged +`</div>`);
+		anime({
+			targets: "#"+id,
+			translateX: "50%",
+			translateY: 10,
+			opacity: 1,
+			delay: function() {
+				return i * 100;
+			},
+		});
+	}
+}
+
 
 // *********JQUERY********* //
 $(document).ready(function() {
-
-	anime({
-		targets: '#main-header',
-		opacity: 1,
-		scale: 0.8
-	});
-
-	anime({
-		targets: '#user-input',
-		translateY: 5,
-		opacity: 1
-	});
-
+	DisplayInput(true);
 	$("form").submit(function(event) {
 		event.preventDefault();
 		var input = parseInt($("input").val());
-
-		var outList = $("ul#output")
-		outList.text("")
-		var output = pingPongNumbers(input);
-
-		anime({
-			targets: '#user-input',
-			translateY: -10,
-			opacity: 0
-		});
-		anime({
-			targets: '#main-header',
-			opacity: 0,
-			scale: 0.1
-		});
-
-		output.forEach(function(number) {
-
-		});
-	})
-
-})
+		flyNumbers(input)
+	});
+});

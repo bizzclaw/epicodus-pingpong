@@ -10,44 +10,7 @@ var getPong = function(number) {
 	}
 	return number
 }
-
-var pingPongNumbers = function(number) {
-	var numbers = []
-	for (var i = 1; i <= number; i++) {
-		numbers.push( getPong(i))
-	}
-	return numbers;
-}
-
 // *********ANIME********* //
-
-var DisplayInput = function(on) {
-	if (on) {
-		anime({
-			targets: "#main-header",
-			opacity: 1,
-			scale: 1.3,
-			// rotate: "2turn"
-		});
-
-		anime({
-			targets: "#user-input",
-			translateY: 20,
-			opacity: 1,
-		});
-	} else {
-		anime({
-			targets: "#user-input",
-			translateY: -10,
-			opacity: 0,
-		});
-		anime({
-			targets: "#main-header",
-			opacity: 0,
-			scale: 0
-		});
-	}
-}
 
 function flyNumbers(amt) {
 	var fadetime = 300;
@@ -85,7 +48,18 @@ function flyNumbers(amt) {
 
 // *********JQUERY********* //
 $(document).ready(function() {
-	DisplayInput(true);
+	anime({
+		targets: "#main-header",
+		opacity: 1,
+		scale: 1.3,
+		// rotate: "2turn"
+	});
+
+	anime({
+		targets: "#user-input",
+		translateY: 20,
+		opacity: 1,
+	});
 	$("form").submit(function(event) {
 		event.preventDefault();
 		var input = parseInt($("input").val());

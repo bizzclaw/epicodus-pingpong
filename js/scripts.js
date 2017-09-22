@@ -50,26 +50,36 @@ var DisplayInput = function(on) {
 }
 
 function flyNumbers(amt) {
-	$(".flynumber").remove()
-	anime({
-		targets: "#output",
-		opacity: 1,
-		translateY: 50
-	})
-	for (i = 1; i <= amt; i++) {
-		var id = "number-"+i
-		var ponged = getPong(i)
-		$("#output").append(`<div class="flynumber" id="`+ id +`">`+ ponged +`</div>`);
+	var fadetime = 300;
+	$(".flynumber").fadeOut(fadetime)
+	setTimeout(function(){
+		$(".flynumber").remove()
 		anime({
-			targets: "#"+id,
-			translateX: "50%",
-			translateY: 10,
+			targets: "#output",
 			opacity: 1,
-			delay: function() {
-				return i * 100;
-			},
-		});
-	}
+			translateY: 50
+		})
+		for (i = 1; i <= amt; i++) {
+			var id = "number-"+i
+			var ponged = getPong(i)
+			$("#output").append(`<div class="flynumber" id="`+ id +`">`+ ponged +`</div>`);
+
+			var animedata = {
+				targets: "#"+id,
+				translateX: "50%",
+				translateY: 10,
+				opacity: 1,
+				delay: function() {
+					return i * 100;
+				},
+			}
+			if (typeof ponged === "string") {
+				animedata.rotate = "4turn"
+				animedata.color = "#FF8D33"
+			}
+			anime(animedata);
+		}
+	}, fadetime)
 }
 
 

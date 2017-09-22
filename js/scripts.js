@@ -1,20 +1,19 @@
-var pings = [3,5,15]
-var pongs = ["ping", "pong", "pingPong"]
+var pings = [15,5,3]
+var pongs = ["ping-pong", "pong", "ping"]
 
-var getPing = function(numbers) {
-	var pingid = 0;
-	pings.forEach(function(ping){
-		if (i % ping === 0) {
-			return pongs[i];
+var getPong = function(number) {
+	for (var pingid = 0; pingid < pings.length; pingid++) {
+		if (number % pings[pingid] === 0) {
+			return pongs[pingid];
 		}
-	})
+	}
 	return number
 }
 
 var pingPongNumbers = function(number) {
 	var numbers = []
 	for (var i = 1; i <= number; i++) {
-		numbers.push( getPing(i))
+		numbers.push( getPong(i))
 	}
 	return numbers;
 }
@@ -27,9 +26,9 @@ $(document).ready(function() {
 
 		var outList = $("ul#output")
 		outList.text("")
-		var output = pingPong(input);
+		var output = pingPongNumbers(input);
 		output.forEach(function(number) {
-			outList.prepend(number);
+			outList.prepend("<li>" + number + "</li>");
 		});
 	})
 })

@@ -33,7 +33,7 @@ Enter a number in to the text field probably.
 | Numbers greater than 0 are forced too 1                                 | 1             | amount too low. forced to 1. 1                                         |
 
 
-## legal
-Uses bootstrap, anime and jQuery.
 
-Copyright (c) 2017 Joseph Tomlinson All Rights Reserved.
+## legal
+Uses bootstrap, anime and jQuery, which preserve their original licenses in this context.
+All other work is shared via the MIT license.
